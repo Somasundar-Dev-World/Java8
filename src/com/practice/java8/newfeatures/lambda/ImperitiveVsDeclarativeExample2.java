@@ -17,14 +17,14 @@ public class ImperitiveVsDeclarativeExample2 {
                 uniqueList.add(num);
             }
         }
-        System.out.println(uniqueList);
+        print(uniqueList);
 
         List<Integer> collect = list.stream().distinct().collect(Collectors.toList());
-        System.out.println(collect);
+        print(collect);
 
         List<String> namesList = Arrays.asList("Soma","Soma","Rekha","Raj");
         List<String> collect1 = namesList.stream().distinct().collect(Collectors.toList());
-        System.out.println(collect1);
+        print(collect1);
 
         List<Student> studentList = new ArrayList<>();
         Student student1 = new Student("ramesh", "A", "500");
@@ -35,22 +35,29 @@ public class ImperitiveVsDeclarativeExample2 {
         studentList.add(student2);
         studentList.add(student3);
         studentList.add(student4);
-
-        System.out.print(" Raw list : ");
-        System.out.println(studentList);
+        print(" Raw list : ",studentList);
 
         List<Student> collect2 = studentList.stream().distinct().collect(Collectors.toList());
-        System.out.print(" Using distinct : ");
-        System.out.println(collect2);
+        print(" Using distinct : ",collect2);
 
         final List<Student> a = studentList.stream().filter(student -> {
             return student.getGrade().equals("A");
         }).collect(Collectors.toList());
-        System.out.print(" Filtered list : ");
-        System.out.println(a);
-
-
+        print(" Filtered list : ", a);
 
     }
 
+    public static void print(String label, Object value) {
+        if(label!=null) {
+            System.out.println("============================================================================================");
+            System.out.println("                                        " + label + "                                           ");
+            System.out.println("============================================================================================");
+        }
+        System.out.println(value);
+        //System.out.println("============================================================================================");
+    }
+
+    public static void print(Object value) {
+        System.out.println(value);
+    }
 }
