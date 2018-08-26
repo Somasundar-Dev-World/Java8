@@ -30,19 +30,26 @@ public class ImperitiveVsDeclarativeExample2 {
         Student student1 = new Student("ramesh", "A", "500");
         Student student2 = new Student("Prakash", "B","400");
         Student student3 = new Student(" Kishore", "C","350");
+        Student student4 = new Student("Prakash", "B","400");
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
+        studentList.add(student4);
 
+        System.out.print(" Raw list : ");
         System.out.println(studentList);
 
         List<Student> collect2 = studentList.stream().distinct().collect(Collectors.toList());
+        System.out.print(" Using distinct : ");
         System.out.println(collect2);
 
         final List<Student> a = studentList.stream().filter(student -> {
             return student.getGrade().equals("A");
         }).collect(Collectors.toList());
+        System.out.print(" Filtered list : ");
         System.out.println(a);
+
+
 
     }
 
