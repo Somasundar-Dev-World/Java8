@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2018. All Rights reserved.
+ */
+
 package com.practice.java8.newfeatures.lambda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 public class ImperitiveVsDeclarativeExample2 {
 
